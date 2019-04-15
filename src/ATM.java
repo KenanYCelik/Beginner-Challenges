@@ -52,42 +52,80 @@ public class ATM {
             int choice = scanner.nextInt();
             System.out.println();
 
-            if (choice == 1){
-                System.out.println("How much would you like to deposit?");
-                double deposit = scanner.nextDouble();
-                balance = balance + deposit;
-                transactions.add(deposit);
-                System.out.println("$" + deposit + " has been added to your account" + "\n" + "You have $" + balance + " left in your account" + "\n");
-            }
+            switch (choice){
+                case 1:
+                    System.out.println("How much would you like to deposit?");
+                    double deposit = scanner.nextDouble();
+                    balance = balance + deposit;
+                    transactions.add(deposit);
+                    System.out.println("$" + deposit + " has been added to your account" + "\n" + "You have $" + balance + " left in your account" + "\n");
+                    break;
 
-            if (choice == 2){
-                System.out.println("How much would you like to withdraw?");
-                double withdraw = scanner.nextDouble();
-                if (withdraw > balance){
-                    System.out.println("Your account does not contain that amount" + "\n" + "You have $" + balance + " in your account" + "\n");
-                } else {
-                balance = balance - withdraw;
-                transactions.add(-withdraw);
-                System.out.println("$" + withdraw + " has been removed from your account" + "\n" + "You have $" + balance + " left in your account" + "\n");
-                }
-            }
+                case 2:
+                    System.out.println("How much would you like to withdraw?");
+                    double withdraw = scanner.nextDouble();
+                    if (withdraw > balance){
+                        System.out.println("Your account does not contain that amount" + "\n" + "You have $" + balance + " in your account" + "\n");
+                    } else {
+                    balance = balance - withdraw;
+                    transactions.add(-withdraw);
+                    System.out.println("$" + withdraw + " has been removed from your account" + "\n" + "You have $" + balance + " left in your account" + "\n");
+                    }
+                    break;
 
-            if (choice == 3){
-                System.out.println("You have $" + balance + " left in your account" + "\n");
-            }
+                case 3:
+                    System.out.println("You have $" + balance + " left in your account" + "\n");
+                    break;
 
-            if (choice == 4){
-                for (int i = 0; i < transactions.size(); i++){
-                    System.out.println(transactions.get(i));
-                }
-                System.out.println();
-            }
+                case 4:
+                    for (int i = 0; i < transactions.size(); i++){
+                        System.out.println(transactions.get(i));
+                    }
+                    System.out.println();
+                    break;
 
-            if (choice == 5){
-                System.out.println("Thank you for your business");
-                scanner.close();
-                account = false;
+                case 5:
+                    System.out.println("Thank you for your business");
+                    scanner.close();
+                    account = false;
+                    break;
             }
+            // if (choice == 1){
+            //     System.out.println("How much would you like to deposit?");
+            //     double deposit = scanner.nextDouble();
+            //     balance = balance + deposit;
+            //     transactions.add(deposit);
+            //     System.out.println("$" + deposit + " has been added to your account" + "\n" + "You have $" + balance + " left in your account" + "\n");
+            // }
+
+            // if (choice == 2){
+            //     System.out.println("How much would you like to withdraw?");
+            //     double withdraw = scanner.nextDouble();
+            //     if (withdraw > balance){
+            //         System.out.println("Your account does not contain that amount" + "\n" + "You have $" + balance + " in your account" + "\n");
+            //     } else {
+            //     balance = balance - withdraw;
+            //     transactions.add(-withdraw);
+            //     System.out.println("$" + withdraw + " has been removed from your account" + "\n" + "You have $" + balance + " left in your account" + "\n");
+            //     }
+            // }
+
+            // if (choice == 3){
+            //     System.out.println("You have $" + balance + " left in your account" + "\n");
+            // }
+
+            // if (choice == 4){
+            //     for (int i = 0; i < transactions.size(); i++){
+            //         System.out.println(transactions.get(i));
+            //     }
+            //     System.out.println();
+            // }
+
+            // if (choice == 5){
+            //     System.out.println("Thank you for your business");
+            //     scanner.close();
+            //     account = false;
+            // }
         }
     }
 }
